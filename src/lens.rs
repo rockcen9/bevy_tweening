@@ -1139,7 +1139,7 @@ mod tests {
             start: RED.into(),
             end: BLUE.into(),
         };
-        let mut assets = Assets::default();
+        let mut assets: Assets<ColorMaterial> = Assets::default();
         let handle = assets.add(ColorMaterial {
             color: Color::WHITE,
             texture: None,
@@ -1150,7 +1150,7 @@ mod tests {
             let mut added = Tick::new(0);
             let mut last_changed = Tick::new(0);
             let mut caller = MaybeLocation::caller();
-            let asset = assets.get_mut(handle.id()).unwrap();
+            let asset = assets.get_mut(handle.id()).unwrap().into_inner();
             let target = Mut::new(
                 asset,
                 &mut added,
@@ -1167,7 +1167,7 @@ mod tests {
             let mut added = Tick::new(0);
             let mut last_changed = Tick::new(0);
             let mut caller = MaybeLocation::caller();
-            let asset = assets.get_mut(handle.id()).unwrap();
+            let asset = assets.get_mut(handle.id()).unwrap().into_inner();
             let target = Mut::new(
                 asset,
                 &mut added,
@@ -1184,7 +1184,7 @@ mod tests {
             let mut added = Tick::new(0);
             let mut last_changed = Tick::new(0);
             let mut caller = MaybeLocation::caller();
-            let asset = assets.get_mut(handle.id()).unwrap();
+            let asset = assets.get_mut(handle.id()).unwrap().into_inner();
             let target = Mut::new(
                 asset,
                 &mut added,
