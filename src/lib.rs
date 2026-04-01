@@ -915,6 +915,7 @@ pub(crate) struct MoveToCommand {
 }
 
 impl EntityCommand for MoveToCommand {
+    type Out = ();
     fn apply(self, mut entity: EntityWorldMut) {
         if let Some(start) = entity.get::<Transform>().map(|tr| tr.translation) {
             let lens = TransformPositionLens {
@@ -950,6 +951,7 @@ pub(crate) struct MoveFromCommand {
 }
 
 impl EntityCommand for MoveFromCommand {
+    type Out = ();
     fn apply(self, mut entity: EntityWorldMut) {
         if let Some(end) = entity.get::<Transform>().map(|tr| tr.translation) {
             let lens = TransformPositionLens {
@@ -985,6 +987,7 @@ pub(crate) struct ScaleToCommand {
 }
 
 impl EntityCommand for ScaleToCommand {
+    type Out = ();
     fn apply(self, mut entity: EntityWorldMut) {
         if let Some(start) = entity.get::<Transform>().map(|tr| tr.scale) {
             let lens = TransformScaleLens {
@@ -1020,6 +1023,7 @@ pub(crate) struct ScaleFromCommand {
 }
 
 impl EntityCommand for ScaleFromCommand {
+    type Out = ();
     fn apply(self, mut entity: EntityWorldMut) {
         if let Some(end) = entity.get::<Transform>().map(|tr| tr.scale) {
             let lens = TransformScaleLens {
@@ -1054,6 +1058,7 @@ pub(crate) struct RotateXCommand {
 }
 
 impl EntityCommand for RotateXCommand {
+    type Out = ();
     fn apply(self, mut entity: EntityWorldMut) {
         if let Some(base_rotation) = entity.get::<Transform>().map(|tr| tr.rotation) {
             let lens = TransformRotateAdditiveXLens {
@@ -1090,6 +1095,7 @@ pub(crate) struct RotateYCommand {
 }
 
 impl EntityCommand for RotateYCommand {
+    type Out = ();
     fn apply(self, mut entity: EntityWorldMut) {
         if let Some(base_rotation) = entity.get::<Transform>().map(|tr| tr.rotation) {
             let lens = TransformRotateAdditiveYLens {
@@ -1126,6 +1132,7 @@ pub(crate) struct RotateZCommand {
 }
 
 impl EntityCommand for RotateZCommand {
+    type Out = ();
     fn apply(self, mut entity: EntityWorldMut) {
         if let Some(base_rotation) = entity.get::<Transform>().map(|tr| tr.rotation) {
             let lens = TransformRotateAdditiveZLens {
@@ -1163,6 +1170,7 @@ pub(crate) struct RotateXByCommand {
 }
 
 impl EntityCommand for RotateXByCommand {
+    type Out = ();
     fn apply(self, mut entity: EntityWorldMut) {
         if let Some(base_rotation) = entity.get::<Transform>().map(|tr| tr.rotation) {
             let lens = TransformRotateAdditiveXLens {
@@ -1199,6 +1207,7 @@ pub(crate) struct RotateYByCommand {
 }
 
 impl EntityCommand for RotateYByCommand {
+    type Out = ();
     fn apply(self, mut entity: EntityWorldMut) {
         if let Some(base_rotation) = entity.get::<Transform>().map(|tr| tr.rotation) {
             let lens = TransformRotateAdditiveYLens {
@@ -1235,6 +1244,7 @@ pub(crate) struct RotateZByCommand {
 }
 
 impl EntityCommand for RotateZByCommand {
+    type Out = ();
     fn apply(self, mut entity: EntityWorldMut) {
         if let Some(base_rotation) = entity.get::<Transform>().map(|tr| tr.rotation) {
             let lens = TransformRotateAdditiveZLens {

@@ -30,7 +30,7 @@ bevy_text = ["bevy/bevy_text", "bevy/bevy_render", "bevy/bevy_sprite"]
 
 [dependencies]
 # Note: abuse 'bevy_color' to force 'bevy_math/curve' feature, which defines EaseFunction
-bevy = { rev = "1b3b01e94003cbcf652f842057ebab547b400b0e", git = "https://github.com/bevyengine/bevy", default-features = false, features = [
+bevy = { rev = "d06aa47744dfa378f2e8a31cd7ff2d59c9afe4b9", git = "https://github.com/bevyengine/bevy", default-features = false, features = [
     "bevy_color",
     "bevy_asset",
     "bevy_log",
